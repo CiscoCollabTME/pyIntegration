@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
     <div class="form-signin text-center mb-4">
-      <img src="{{ url_for('static', filename='img/logo.png') }}" style="width:200px;">
-      <h1 class="h3 mb-3 font-weight-normal">Hello, {{ session.data.name }}</h1>
+      <h1><img src="{{ url_for('static', filename='img/logo.png') }}" style="width:200px;"></h1>
+      <h2 class="h4 mb-4 font-weight-normal">Hello, {{ session.data.name }}</h2>
     </div>
 {% endblock %}
