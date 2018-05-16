@@ -110,7 +110,8 @@ def test():
         return redirect('/login')
 
     else:
-        return "Hello {}".format(get_name())
+        session['data'] = {'name': gete_name()}
+        return render_template('index.html')
 
 @app.route("/hello", methods=["GET"])
 def hello():
