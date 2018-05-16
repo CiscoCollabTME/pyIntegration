@@ -127,4 +127,5 @@ if __name__ == "__main__":
     app.secret_key = os.urandom(24)
     #app.jinja_env.auto_reload = True
     #app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run(host='0.0.0.0', port=port, debug=True, ssl_context='adhoc')
+    #app.run(host='0.0.0.0', port=port, debug=True, ssl_context='adhoc') For testing locally
+    app.run(host='0.0.0.0', port=port, debug=True)
