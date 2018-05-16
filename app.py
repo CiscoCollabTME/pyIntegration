@@ -108,19 +108,17 @@ def test():
     if not session.get('token'):
         session['redirect_to'] = request.base_url
         return redirect('/login')
-
     else:
-        session['data'] = {'name': gete_name()}
-        return render_template('index.html')
+        return "Hello, {}".format(get_name())
 
 @app.route("/hello", methods=["GET"])
 def hello():
     if not session.get('token'):
         session['redirect_to'] = request.base_url
         return redirect('/login')
-
     else:
-        return "Hello {}".format(get_name())
+        session['data'] = {'name': get_name()}
+        return render_template('hello.html')
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
