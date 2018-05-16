@@ -60,7 +60,7 @@ def login():
     # For Testing
     print("===========\nredirect: {}\nclient: {}\nauth_url: {}\nstate:{}"
           .format(redirect_url, wxteams, authorization_url, state))
-    
+
 
     # State is used to prevent CSRF, keep this for later.
     session['oauth_state'] = state
