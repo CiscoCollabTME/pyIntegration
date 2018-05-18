@@ -8,10 +8,10 @@
 			"description": "Your integration's client id"
 		},
 		"client_secret": {
-			"description": "Your integration's client secret",
+			"description": "Your integration's client secret"
 		},
-        "scopes": {
-			"description": "Your integration's scope(s)",
+		"scopes": {
+			"description": "Your integration's scope(s)"
 		}
 	}
 }
