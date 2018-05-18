@@ -9,11 +9,12 @@ app = Flask(__name__)
 
 
 # This information is obtained upon registration of a new GitHub
-client_id = os.environ.get("client_id", 'C423a10911a7a146506667581402cce863ce5d5ec77c0f28908e011066fa046ea')
-client_secret = os.environ.get("client_secret", '12b87a83974a21d5d5a2c65fa80d8778f1daba96fb7f20b63869fc9143354a13')
+client_id = os.environ.get("client_id")
+client_secret = os.environ.get("client_secret")
+scopes = os.environ.get('scopes')
+
 authorization_base_url = 'https://api.ciscospark.com/v1/authorize'
 token_url = 'https://api.ciscospark.com/v1/access_token'
-scopes = os.environ.get('scopes', 'spark:all')
 
 ###########
 #FUNCTIONS#
