@@ -119,7 +119,7 @@ def test():
 @app.route("/hello", methods=["GET"])
 def hello():
     if not session.get('token'):
-        session['redirect_to'] = request.base_url
+        session['redirect_to'] = request.base_url.replace('http://', 'https://')
         return redirect('/login')
     else:
         session['data'] = {'name': get_name()}
