@@ -75,6 +75,11 @@ def callback():
 
     code = request.args.get('code') # Get the code provided by the URL from the auth
 
+    redirect_uri = request.base_url.replace('http://', 'https://')
+    redirect_url = request.url_root.replace('http://', 'https://') + 'callback'
+    print(redirect_uri)
+    print("Previous url" + redirect_url)
+
     # Webex Teams needs grant_type, client_id, client_secret, code, redirect_uri
     headers = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
     grant_type = "authorization_code"
