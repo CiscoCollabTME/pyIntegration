@@ -83,7 +83,7 @@ def callback():
         "client_id": client_id,
         "client_secret": client_secret,
         "code": code,
-        "redirect_uri": request.base_url
+        "redirect_uri": request.base_url.replace('http://', 'https://')
     }
 
     resp = requests.post(token_url, data=body, headers=headers)
