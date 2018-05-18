@@ -1,0 +1,17 @@
+{
+	"name": "Webex Teams Python OAuth Sample",
+	"description": "A simple Cisco Webex Teams Python (Flask) Integration to showcase the OAuth flow",
+	"repository": "https://github.com/CTGTME/pyIntegration",
+	"keywords": ["python", "flask", "cisco", "webex", "webex teams", "integration", "oauth"],
+	"env": {
+		"client_id": {
+			"description": "Your integration's client id"
+		},
+		"client_secret": {
+			"description": "Your integration's client secret",
+		},
+        "scopes": {
+			"description": "Your integration's scope(s)",
+		}
+	}
+}
