@@ -57,11 +57,10 @@ def login():
     wxteams = OAuth2Session(client_id, scope=scopes, redirect_uri=redirect_url)
     authorization_url, state = wxteams.authorization_url(authorization_base_url)
 
-    '''
     # For Testing
     print("===========\nredirect: {}\nclient: {}\nauth_url: {}\nstate:{}"
           .format(redirect_url, wxteams, authorization_url, state))
-    '''
+
 
     # State is used to prevent CSRF, keep this for later.
     session['oauth_state'] = state
