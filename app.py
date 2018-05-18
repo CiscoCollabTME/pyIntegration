@@ -53,7 +53,7 @@ def index():
 @app.route("/login")
 def login():
     print("Hit the: Login")
-    redirect_url = request.url_root + 'callback'  # redirect to the callback route
+    redirect_url = request.url_root.replace('http://', 'https://') + 'callback'  # redirect to the callback route
     wxteams = OAuth2Session(client_id, scope=scopes, redirect_uri=redirect_url)
     authorization_url, state = wxteams.authorization_url(authorization_base_url)
 
