@@ -22,12 +22,12 @@
                         scope of the application. The user is redirected to this authorization url.</p>
 
                         <p>Upon redirection to the authorization url, the user is presented with the familiar <strong>Webex Teams
-                            login page</strong>. Only user's in the organization of the Integration can successfully log in. When the user logs in, the </p>
+                            login page</strong>. Only user's in the organization of the Integration can successfully log in.</p>
 
                         <p>When the user submits their credentials, upon a successful login, they are redirected to the
                             <code>@app.route("/callback", methods=["GET"])</code> route. Webex Teams returns to the call back route with a
                             code appended to the end of the request. This code is parsed and then sent back to Webex teams with some additional
-                            headers. Webex Teams will then respond with the user's authentication token. This route saves the token in the session
+                            headers. Webex Teams will then respond with the user's authentication token. This route saves the token in the session.
                         </p>
 
                         <p>The application then can continue the process to the <strong>Hello Page (/hello)</strong> with the token to utilize the above mentioned Spark/Teams Python API</p>
