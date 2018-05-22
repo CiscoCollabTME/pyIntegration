@@ -1,0 +1,53 @@
+        <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+           aria-controls="collapseExample">Learn how this works</a> &nbsp;
+        <a class="btn btn-secondary" data-toggle="collapse" href="#collapseDeploy" role="button" aria-expanded="false"
+           aria-controls="collapseExample">Deploy your own</a><br/>
+
+        <div class="collapse" id="collapseExample">
+            <br/>
+             <div class="card card-body text-left">
+                 <h3>This Application Explained</h3>
+                        <p>An Integration is created at <a href="https://developer.webex.com/add-integration.html" target="_blank">Cisco Webex for Developers</a>.
+                        Upon creation you are given a client_id, client_secret, and the scope you defined. These are used in the flask application.</p>
+
+                        <p>The <strong>Splash Page (/index)</strong> page contains a button the links to the target
+                            <strong>Hello page (/hello)</strong>. The target page has a flask @route.
+                            The <code>@app.route("/hello", methods=["GET"])</code> is called and first checks if a token is stored in the session.</p>
+
+                        <p>If a token is stored, it makes a query using the <a href="https://github.com/CiscoDevNet/ciscosparkapi" target="_blank">
+                            Cisco Spark Python API</a> to grab the user's display name and then passes it to the hello page.</p>
+
+                        <p>If no token is stored in the session, the application calls the <code>@app.route("/login")</code> route.
+                        This route creates a python Oauth2 Session and generates the authorization url with the client_id, client_secret, and
+                        scope of the application. The user is redirected to this authorization url.</p>
+
+                        <p>Upon redirection to the authorization url, the user is presented with the familiar <strong>Webex Teams
+                            login page</strong>. Only user's in the organization of the Integration can successfully log in. When the user logs in, the </p>
+
+                        <p>When the user submits their credentials, upon a successful login, they are redirected to the
+                            <code>@app.route("/callback", methods=["GET"])</code> route. Webex Teams returns to the call back route with a
+                            code appended to the end of the request. This code is parsed and then sent back to Webex teams with some additional
+                            headers. Webex Teams will then respond with the user's authentication token. This route saves the token in the session
+                        </p>
+
+                        <p>The application then can continue the process to the <strong>Hello Page (/hello)</strong> with the token to utilize the above mentioned Spark/Teams Python API</p>
+
+                        <p>You can learn more about Integrations (OAuth) on the developer portal
+                            <a href="https://developer.webex.com/authentication.html" target="_blank">document</a>. </p>
+
+            </div>
+        </div>
+        <div class="collapse" id="collapseDeploy">
+            <br/>
+             <div class="card card-body text-left">
+            <h3>Deploy in 2 steps!</h3>
+            <ol>
+                <li>Create a <a href="https://developer.webex.com/add-integration.html" target="_blank">Webex Teams Integration</a>: the redirect url will be
+                    <code>https://< your heroku app name >.herokuapp.com/callback</code>. Don't navigate away, you'll need some details to deploy to heroku.</li>
+                <li><a href="https://heroku.com/deploy?template=https://github.com/CTGTME/pyIntegration" target="_blank">
+                        <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+                </a></li>
+            </ol>
+                 <p>You can checkout the code on <a href="https://github.com/CTGTME/pyIntegration" target="_blank">Github</a></p>
+             </div>
+        </div>
