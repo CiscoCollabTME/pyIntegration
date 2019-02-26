@@ -14,8 +14,8 @@
                             <strong>Hello page (/hello)</strong>. The target page has a flask @route.
                             The <code>@app.route("/hello", methods=["GET"])</code> is called and first checks if a token is stored in the session.</p>
 
-                        <p>If a token is stored, it makes a query using the <a href="https://github.com/CiscoDevNet/ciscosparkapi" target="_blank">
-                            Cisco Spark Python API</a> to grab the user's display name and then passes it to the hello page.</p>
+                        <p>If a token is stored, it makes a query using the <a href="https://github.com/CiscoDevNet/webexteamssdk" target="_blank">
+                            Cisco Webex Teams Python SDK</a> to grab the user's display name and then passes it to the hello page.</p>
 
                         <p>If no token is stored in the session, the application calls the <code>@app.route("/login")</code> route.
                         This route creates a python Oauth2 Session and generates the authorization url with the client_id, client_secret, and
